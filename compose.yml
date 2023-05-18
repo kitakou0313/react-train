@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  node:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/react-train:/webapp
+    ports:
+      - "3000:3000"
+
+  web:
+    image: nginx:1.24.0 
+    volumes:
+      - ./frontend/react-train/out:/var/www
+      - ./web-server/config:/etc/nginx/conf.d
+    ports:
+      - "8080:8080"
