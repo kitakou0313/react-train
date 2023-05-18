@@ -13,7 +13,7 @@ services:
   web:
     image: nginx:1.24.0 
     volumes:
-      - ./frontend/react-train/out:/var/www
-      - ./web-server/config:/etc/nginx/conf.d
+      - ./frontend/react-train/build:/var/www/html
+      - ./web-server/config/next.conf:/etc/nginx/conf.d/
     ports:
       - "8080:8080"
