@@ -14,6 +14,6 @@ services:
     image: nginx:1.24.0 
     volumes:
       - ./frontend/react-train/build:/var/www/html
-      - ./web-server/config/next.conf:/etc/nginx/conf.d/
+      - ./web-server/config/next.conf:/etc/nginx/conf.d/next.conf
     ports:
       - "8080:8080"
